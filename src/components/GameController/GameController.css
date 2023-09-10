@@ -1,0 +1,17 @@
+.GameController {
+    position: absolute;
+    background-color: transparent;
+    cursor: default;
+    height: 100%;
+    width: 100%;
+    border: none;
+    color: transparent;
+    outline:none
+  }
+  
+  .GameController:focus {
+    border: none;
+    outline: none;
+    caret-color: transparent;
+  }
+  
