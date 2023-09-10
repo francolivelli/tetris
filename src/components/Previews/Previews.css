@@ -1,0 +1,7 @@
+.Previews {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  gap: 2vw;
+  left: 32vw;
+}
