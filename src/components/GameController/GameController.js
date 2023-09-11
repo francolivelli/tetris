@@ -1,6 +1,8 @@
 import "./GameController.css";
 import { Action, actionForKey } from "../../business/input";
 import { playerController } from "../../business/playerController";
+import { useInterval } from "../../hooks/useInterval";
+import { useDropTime } from "../../hooks/useDropTime";
 
 const GameController = ({
   board,
@@ -9,6 +11,14 @@ const GameController = ({
   setGameOver,
   setPlayer,
 }) => {
+  const [dropTime, pauseDropTime, resumeDropTime] = useDropTime({
+    gameStats
+  });
+
+  useInterval(() => {
+    handleInput({ action: Action.SlowDrop });
+  }, dropTime);
+
   const onKeyDown = ({ code }) => {
     const action = actionForKey(code);
     handleInput({ action });
